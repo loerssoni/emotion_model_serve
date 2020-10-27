@@ -1,0 +1,22 @@
+{
+  "batch_size": 50,
+  "dropout": 0.75,
+  "epoch": 300,
+  "device": "cpu",
+  "learning_rate": 0.001,
+  "word_dim": 50,
+  "norm_limit": 3.0,
+  "mode": "non-static",
+  "num_feature_maps": 150,
+  "embeddings": "own",
+  "early_stop": 3,
+  "regularization": 0.001,
+  "word_vocab_size": 17098,
+  "class_size": 6,
+  "model_time": "15_36_44",
+  "FILTER_SIZES": [
+    3,
+    4,
+    5
+  ]
+}
