@@ -45,13 +45,13 @@ def getVectors(args, data):
 
     if args.mode != 'rand':
         if args.embeddings == 'word2vec':
-            embed = KeyedVectors.load_word2vec_format('./data/GoogleNews-vectors-negative300.bin', binary=True)
+            embed = KeyedVectors.load_word2vec_format('GoogleNews-vectors-negative300.bin', binary=True)
         if args.embeddings == 'fasttext':
-            embed = KeyedVectors.load_word2vec_format('./data/wiki-news-300d-1M.vec', encoding='utf-8')
+            embed = KeyedVectors.load_word2vec_format('wiki-news-300d-1M.vec', encoding='utf-8')
         if args.embeddings == 'ownfast':
-            embed = KeyedVectors.load(f'./data/own_fast_{args.word_dim}.vec', mmap='r')
+            embed = KeyedVectors.load(f'own_fast_{args.word_dim}.vec', mmap='r')
         else:
-            embed = KeyedVectors.load(f'./data/own_vec_{args.word_dim}.vec', mmap='r')
+            embed = KeyedVectors.load(f'own_vec_{args.word_dim}.vec', mmap='r')
             
         for i in range(len(data.TEXT.vocab)):
             word = data.TEXT.vocab.itos[i]
@@ -83,5 +83,5 @@ class DATA():
         
         #defield torch dataset field type objects
         self.TEXT = data.Field(batch_first=True, lower=True, fix_length=70)
-        with open('data/vocab.pkl', 'rb') as f:
+        with open('vocab.pkl', 'rb') as f:
             self.TEXT.vocab = pickle.load(f)
